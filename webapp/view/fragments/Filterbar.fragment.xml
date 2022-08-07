@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<fb:FilterBar id="filterBar" header="{i18n>title}" width="100%" reset="onReset" search="onSearch" clear="onClear" cancel="onCancel"
+		filtersDialogClosed="onFiltersDialogClosed" showRestoreButton="true" showClearButton="true" showCancelButton="true">
+		<fb:filterGroupItems>
+			<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="{i18n>OrderID}" partOfCurrentVariant="true" visibleInFilterBar="true">
+				<fb:control>
+					<Input value="{mFilter>/OrderID}" />
+				</fb:control>
+			</fb:FilterGroupItem>
+			<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="{i18n>CustomerID}" partOfCurrentVariant="true" visibleInFilterBar="true">
+				<fb:control>
+					<Input id="inputFiltro" />
+				</fb:control>
+			</fb:FilterGroupItem>
+		</fb:filterGroupItems>
+	</fb:FilterBar>
+</core:FragmentDefinition>

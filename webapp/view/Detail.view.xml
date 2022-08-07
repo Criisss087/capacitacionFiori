@@ -1,0 +1,79 @@
+<mvc:View controllerName="project1.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page  title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <content >
+        	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Detalle de la Orden"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>OrderID}" />
+				<Text  text="{mOrders>/Detail/OrderID}" />
+				<Label text="{i18n>OrderDate}" />
+				<Text text="{mOrders>/Detail/OrderDate}" />
+				<Label text="{i18n>City}" />
+				<Text text="{mOrders>/Detail/ShipAddress} {mOrders>/Detail/ShipCity} {mOrders>/Detail/ShipCountry} ({mOrders>/Detail/ShipPostalCode})"/>
+				<Label text="{i18n>Freight}" />
+				<Text text="{mOrders>/Detail/Freight}" />
+				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+     <Table id="tableOdersDetail"
+                inset="false"
+                items="{mOrders>/Detail/Order_Details/results}">
+		<columns>
+			<Column
+				>
+				<Text text="{i18n>OrderID}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>ProductID}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>Quantity}" />
+			</Column>
+            <Column
+				>
+				<Text text="{i18n>UnitePrice}" />
+			</Column>
+
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onNavDetail">
+				<cells>
+					<ObjectIdentifier
+						title="{mOrders>OrderID}"/>
+                    <ObjectIdentifier
+						title="{mOrders>ProductID}"/>
+					<Text
+						text="{mOrders>Quantity}" />
+                        <Text
+						text="{mOrders>UnitPrice}" />
+
+				</cells>
+			</ColumnListItem>
+		</items>
+        	</Table>
+        </content>
+    </Page>
+</mvc:View>

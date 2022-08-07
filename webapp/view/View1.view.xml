@@ -1,0 +1,58 @@
+<mvc:View controllerName="project1.controller.View1"
+xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showHeader="false">
+        <content>
+        <core:Fragment fragmentName="project1.view.fragments.Filterbar" type="XML" />
+         <Table id="tableOders"
+                inset="false"
+                items="{mOrders>/}">
+		<columns>
+			<Column
+				>
+				<Text text="{i18n>OrderID}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>CustomerID}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>City}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>Freight}" />
+			</Column>
+			<Column
+				>
+				<Text text="{i18n>OrderDate}" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onNavDetail">
+				<cells>
+					<ObjectIdentifier
+						title="{mOrders>OrderID}"/>
+                    <ObjectIdentifier
+						title="{mOrders>CustomerID}"/>
+					<Text
+						text="{mOrders>ShipCity}, {mOrders>ShipCountry} ({mOrders>ShipPostalCode})" />
+					<Text
+						text="{mOrders>Freight}" />
+					<Text text="{
+				        path: 'mOrders>OrderDate',
+				        type: 'sap.ui.model.type.Date',
+				        formatOptions: {
+				          pattern: 'dd/MM/yyyy'
+				        }
+				      }" />
+				</cells>
+			</ColumnListItem>
+		</items>
+        	</Table>
+
+        </content>
+    </Page>
+</mvc:View>
