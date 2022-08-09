@@ -130,16 +130,9 @@
                 },
                 {
                     "name": "Detail",
-                    "pattern": "Detail/{orderId}",
+                    "pattern": "Detail/{orderId}/{employeeId}",
                     "target": [
                         "TargetDetail"
-                    ]
-                },
-                {
-                    "name": "MoreDetail",
-                    "pattern": "Detail/{orderId}/MoreDetail/{ordId}/{prdId}",
-                    "target": [
-                        "TargetMoreDetail"
                     ]
                 }
             ],
@@ -157,13 +150,6 @@
                     "clearControlAggregation": false,
                     "viewId": "Detail",
                     "viewName": "Detail"
-                },
-                "TargetMoreDetail": {
-                    "viewType": "XML",
-                    "transition": "slide",
-                    "clearControlAggregation": false,
-                    "viewId": "MoreDetail",
-                    "viewName": "MoreDetail"
                 }
                 
             }

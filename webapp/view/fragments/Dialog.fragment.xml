@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+		xmlns="sap.m"
+			xmlns:fb="sap.ui.comp.filterbar"
+				xmlns:vh="sap.ui.comp.valuehelpdialog"
+		xmlns:core="sap.ui.core">
+		<vh:ValueHelpDialog
+		title="{i18n>country}"
+		ok="onValueHelpOkPress"
+        cancel="onValueHelpCancelPress"
+		key="OrderID"
+		descriptionKey="EmployeeID">
+		<vh:filterBar>
+			<fb:FilterBar advancedMode="false" search="onSearchHelp" isRunningInValueHelpDialog="true" showFilterConfiguration="false" filterBarExpanded='false' >
+		
+			</fb:FilterBar>
+		</vh:filterBar>
+	</vh:ValueHelpDialog>
+</core:FragmentDefinition>

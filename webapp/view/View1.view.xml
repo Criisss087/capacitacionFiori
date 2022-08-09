@@ -7,6 +7,9 @@ xmlns:core="sap.ui.core"
         <core:Fragment fragmentName="project1.view.fragments.Filterbar" type="XML" />
          <Table id="tableOders"
                 inset="false"
+                growing="true"
+                growingThreshold="35"
+                growingScrollToLoad="true"
                 items="{mOrders>/}">
 		<columns>
 			<Column
@@ -29,6 +32,10 @@ xmlns:core="sap.ui.core"
 				>
 				<Text text="{i18n>OrderDate}" />
 			</Column>
+            <Column width="3rem"
+				>
+				
+			</Column>
 		</columns>
 		<items>
 			<ColumnListItem vAlign="Middle" type="Navigation" press="onNavDetail">
@@ -48,6 +55,7 @@ xmlns:core="sap.ui.core"
 				          pattern: 'dd/MM/yyyy'
 				        }
 				      }" />
+                      <Button press="openDialog" icon="sap-icon://detail-view"></Button>
 				</cells>
 			</ColumnListItem>
 		</items>

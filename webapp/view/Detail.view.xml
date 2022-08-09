@@ -59,7 +59,7 @@
 
 		</columns>
 		<items>
-			<ColumnListItem vAlign="Middle" type="Navigation" press="onNavDetail">
+			<ColumnListItem vAlign="Middle">
 				<cells>
 					<ObjectIdentifier
 						title="{mOrders>OrderID}"/>

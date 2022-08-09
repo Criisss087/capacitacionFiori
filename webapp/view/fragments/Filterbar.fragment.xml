@@ -1,16 +1,40 @@
 <core:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
 	xmlns="sap.m">
-	<fb:FilterBar id="filterBar" header="{i18n>title}" width="100%" reset="onReset" search="onSearch" clear="onClear" cancel="onCancel"
-		filtersDialogClosed="onFiltersDialogClosed" showRestoreButton="true" showClearButton="true" showCancelButton="true">
+	<fb:FilterBar id="filterBar" header="{i18n>title}" width="100%" reset="onReset" search="onSearch"
+		showResetButton="true">
 		<fb:filterGroupItems>
 			<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="{i18n>OrderID}" partOfCurrentVariant="true" visibleInFilterBar="true">
 				<fb:control>
-					<Input value="{mFilter>/OrderID}" />
+                	<Input
+			id="productInput"
+            value="{mFilter>/OrderID}" 
+			placeholder="Enter product"
+			showSuggestion="true"
+			suggestionItems="{mOrders>/}">
+			<suggestionItems>
+				<core:ListItem text="{mOrders>OrderID}"  />
+			</suggestionItems>
+					</Input>
 				</fb:control>
 			</fb:FilterGroupItem>
+            
 			<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="{i18n>CustomerID}" partOfCurrentVariant="true" visibleInFilterBar="true">
 				<fb:control>
-					<Input id="inputFiltro" />
+					<MultiInput id="multiInput" valueHelpRequest="onHelpValue"></MultiInput>
+				</fb:control>
+			</fb:FilterGroupItem>
+
+            <fb:FilterGroupItem groupName="__$INTERNAL$" name="C" label="{i18n>City}" partOfCurrentVariant="true" visibleInFilterBar="true">
+				<fb:control>
+					<Input id="direccion" />
+				</fb:control>
+			</fb:FilterGroupItem>
+
+            <fb:FilterGroupItem groupName="__$INTERNAL$" name="D" label="{i18n>OrderDate}" partOfCurrentVariant="true" visibleInFilterBar="true">
+				<fb:control>
+						<DateRangeSelection
+                            width="100%"
+                            id="rangeSelection" />
 				</fb:control>
 			</fb:FilterGroupItem>
 		</fb:filterGroupItems>
